@@ -3,7 +3,7 @@ const app = require("./app");
 
 console.log(`
 ========================================
-Welcome to Machine A!
+Welcome to Machine B!
 ========================================
 `);
 

@@ -10,7 +10,7 @@ const queue = kue.createQueue({
 
 const concurrency = 2; // default
 
-queue.process("A-A", concurrency, function(job, done) {
+queue.process("B-A", concurrency, function(job, done) {
   setTimeout(function() {
     const { data } = job;
     data.extra = "A";
@@ -21,7 +21,7 @@ queue.process("A-A", concurrency, function(job, done) {
   }, 2000);
 });
 
-queue.process("A-B", concurrency, function(job, done) {
+queue.process("B-B", concurrency, function(job, done) {
   setTimeout(function() {
     const { data } = job;
     data.extra = "B";
@@ -32,7 +32,7 @@ queue.process("A-B", concurrency, function(job, done) {
   }, 2000);
 });
 
-queue.process("A-C", concurrency, function(job, done) {
+queue.process("B-C", concurrency, function(job, done) {
   setTimeout(function() {
     const { data } = job;
     data.extra = "C";

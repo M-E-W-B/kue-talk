@@ -7,7 +7,7 @@ const app = express();
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.end("Welcome to Machine A!");
+  res.end("Welcome to Machine B!");
 });
 
 function createJob() {
@@ -21,8 +21,8 @@ function createJob() {
   };
 
   const job = queue
-    .create(`A-${machine}`, {
-      title: `Machine A sent a guy named ${guy.name} to Machine ${machine}`,
+    .create(`B-${machine}`, {
+      title: `Machine B sent a guy named ${guy.name} to Machine ${machine}`,
       guy
     })
     .on("complete", function(data) {
@@ -49,7 +49,7 @@ function createJob() {
         console.log(
           `JOB ${job.id} :- Guy named ${
             data.name
-          } started from Machine A to Machine ${machine}!`
+          } started from Machine B to Machine ${machine}!`
         );
         setTimeout(createJob, (Math.random() * 5) | 0);
       }
