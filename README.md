@@ -1,3 +1,3 @@
-# Looplr
+# Kue Talk
 
-Basic implementation of an e-commerce service
+A couple of machines talking to each other through Kue.
